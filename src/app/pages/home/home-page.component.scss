@@ -1,0 +1,25 @@
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px
+}
+
+.title, label {
+  color: white;
+}
+
+.blue-title {
+  color: var(--bright-blue);
+}
+
+.title {
+  font-size: 3.125rem;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.125rem;
+  margin: 0;
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}

@@ -1,0 +1,7 @@
+<form [formGroup]="userForm" (ngSubmit)="addClient()">
+  <div class="form-control">
+    <label for="name"> Digite o nome do cliente:</label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+  <button type="submit">Adicionar Cliente</button>
+</form>

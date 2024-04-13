@@ -1,0 +1,10 @@
+<div>
+  <h1 class="title" [class]="{'blue-title': blueTitle}">{{pageTitle | uppercase}}</h1>
+  <label>
+    Digite o Titulo da pagina:
+    <input type="text" [(ngModel)]="pageTitle">
+  </label>
+
+  <button (click)="changeColor()">Alterar cor do titulo</button>
+  <button (click)="sayHello()">Alerta</button>
+</div>
