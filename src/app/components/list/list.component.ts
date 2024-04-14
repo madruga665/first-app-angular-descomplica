@@ -8,6 +8,7 @@ import { Client } from 'src/app/models/client.model';
 })
 export class ListComponent {
   constructor() {}
-  @Input() clientList: Client[] = [];
-  @Input() clientName: string = '';
+
+  @Input() clientList!: Client[];
+  @Input() clientName!: string;
 }
