@@ -1,0 +1,17 @@
+<form [formGroup]="userForm" (ngSubmit)="login()">
+  <h2>Login</h2>
+  <div class="form-control">
+    <label for="email"> Email:</label>
+    <input id="email" type="text" formControlName="email">
+  </div>
+
+  <div class="form-control">
+    <label for="password"> Senha:</label>
+    <input id="password" type="text" formControlName="password">
+  </div>
+  <button type="submit">Login</button>
+  <div class="error-message-container" *ngIf="showLoginError">
+    <p>Deu ruim no login!</p>
+    <p>tente novamente ou entre em contato com o suporte</p>
+  </div>
+</form>

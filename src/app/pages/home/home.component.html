@@ -1,10 +1,4 @@
 <div>
-  <h1 class="title" [class]="{'blue-title': blueTitle}">{{pageTitle | uppercase}}</h1>
-  <label>
-    Digite o Titulo da pagina:
-    <input type="text" [(ngModel)]="pageTitle">
-  </label>
-
-  <button (click)="changeColor()">Alterar cor do titulo</button>
-  <button (click)="sayHello()">Alerta</button>
+  <h1 class="title">{{pageTitle | uppercase}}</h1>
+  <a class="login-button" [routerLink]="['/login']">Fazer Login</a>
 </div>
