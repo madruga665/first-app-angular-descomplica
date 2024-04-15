@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ListComponent } from './list.component';
+import { ClientListComponent } from './client-list.component';
 
 describe('ListComponent', () => {
-  let component: ListComponent;
-  let fixture: ComponentFixture<ListComponent>;
+  let component: ClientListComponent;
+  let fixture: ComponentFixture<ClientListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ListComponent],
+      declarations: [ClientListComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ListComponent);
+    fixture = TestBed.createComponent(ClientListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -20,13 +20,21 @@ describe('ListComponent', () => {
   });
 
   it('should render client list', () => {
-    const testClients = [{ name: 'Luciano', age: 37 }];
+    const testClients = [
+      {
+        name: 'Luciano',
+        age: 37,
+        id: '1',
+        email: 'madruga665@gmail.com',
+        password: '123456',
+      },
+    ];
     component.clientList = testClients;
     fixture.detectChanges();
 
     const compiled = fixture.nativeElement as HTMLElement;
     const clientListItems = compiled.querySelectorAll('li');
-    const client = compiled.querySelector('li')?.textContent?.trim()
+    const client = compiled.querySelector('li')?.textContent?.trim();
 
     expect(clientListItems.length).toBe(testClients.length);
     expect(client).toBe('Luciano');

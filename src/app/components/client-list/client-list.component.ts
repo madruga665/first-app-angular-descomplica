@@ -2,11 +2,11 @@ import { Component, Input } from '@angular/core';
 import { Client } from 'src/app/models/client.model';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss'],
+  selector: 'app-client-list',
+  templateUrl: './client-list.component.html',
+  styleUrls: ['./client-list.component.scss'],
 })
-export class ListComponent {
+export class ClientListComponent {
   constructor() {}
 
   @Input() clientList!: Client[];

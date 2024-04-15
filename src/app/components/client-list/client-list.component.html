@@ -1,0 +1,7 @@
+<ul>
+  <a *ngFor="let client of clientList" [routerLink]="['/clients/details', client.id]">
+    <li>{{ client.name }}
+      <span *ngIf="client.name === 'Julia Amâncio'"> - Cabeça de Bigorna</span>
+    </li>
+  </a>
+</ul>
