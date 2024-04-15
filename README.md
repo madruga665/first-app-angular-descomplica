@@ -3,7 +3,7 @@
 >[!NOTE]
 >Esse projeto foi criado com [Angular CLI](https://github.com/angular/angular-cli) versão 15.2.4.
 
-## Matéria Desenvolvimento Mobile
+## Matéria: Desenvolvimento Mobile
 
 **Aulas:**
 
