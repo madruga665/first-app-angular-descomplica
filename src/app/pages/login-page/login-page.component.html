@@ -10,7 +10,7 @@
     <input id="password" type="text" formControlName="password">
   </div>
   <button type="submit">Login</button>
-  <div class="error-message-container" *ngIf="showLoginError">
+  <div class="error-message-container" *ngIf="(showLoginError() | async )">
     <p>Deu ruim no login!</p>
     <p>tente novamente ou entre em contato com o suporte</p>
   </div>

@@ -1,8 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Client } from 'src/app/models/client.model';
-import { ClientService } from 'src/app/services/client.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -12,8 +10,7 @@ import { ClientService } from 'src/app/services/client.service';
 export class LoginPageComponent {
   constructor(
     private formBuilder: FormBuilder,
-    private clientService: ClientService,
-    private router: Router
+    private authService: AuthService
   ) {}
 
   userForm = this.formBuilder.group({
@@ -21,46 +18,18 @@ export class LoginPageComponent {
     password: '',
   });
 
-  clientInMemoryDatabase = this.clientService.getClients();
-  showLoginError = false;
-
-  navigate(): void {
-    const isLogged = localStorage.getItem('isLogged');
-
-    if (isLogged === 'true') {
-      this.router.navigate(['/dashboard']);
-    }
+  showLoginError() {
+    return this.authService.getShowLoginError();
   }
 
-  validateClientInfo(client: Client | undefined): boolean {
-    let isValidClient = true;
+  login() {
+    const email = this.userForm.value.email;
+    const password = this.userForm.value.password;
 
-    if (!client) {
-      isValidClient = false
-      this.showLoginError = true;
+    if (email && password) {
+      this.authService.login(email, password);
     }
 
-    const isCorrectPassword = client?.password === this.userForm.value.password;
-
-    if (!isCorrectPassword) {
-      isValidClient = false;
-      this.showLoginError = true;
-      this.userForm.reset();
-    }
-
-    return isValidClient;
-  }
-
-  login(): void {
-    const client = this.clientInMemoryDatabase.find(({ email }) => {
-      return email === this.userForm.value.email;
-    });
-
-    const loginSuccess = this.validateClientInfo(client) && client;
-
-    if (loginSuccess) {
-      localStorage.setItem('isLogged', 'true');
-      this.navigate();
-    }
+    this.userForm.reset();
   }
 }

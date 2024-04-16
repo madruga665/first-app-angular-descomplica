@@ -14,7 +14,7 @@ Primeira parcial:
 - [x] 3. Conceitos Básicos do Angular
 - [x] 4. Rotas e Segurança dos componentes
 - [x] 5. RxJS dados Assíncronos
-- [ ] 6. Manipular dados utilizando JSON
+- [x] 6. Manipular dados utilizando JSON
 - [ ] 7. Angular Material e Formulários
 - [ ] 8. Formulários
 

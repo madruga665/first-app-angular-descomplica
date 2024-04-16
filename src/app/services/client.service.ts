@@ -1,44 +1,45 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Client } from '../models/client.model';
+import { Observable } from 'rxjs';
+import { ThisReceiver } from '@angular/compiler';
 
 @Injectable({ providedIn: 'root' })
 export class ClientService {
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
-  private clients = [
-    {
-      id: '1',
-      name: 'Luciano Amâncio',
-      email: 'madruga665@gmail.com',
-      password: 'madruga665',
-      age: 37,
-    },
-    {
-      id: '2',
-      name: 'Vanessa Graziele',
-      email: 'vanessa@gmail.com',
-      password: 'vanessa123',
-      age: 32,
-    },
-    {
-      id: '3',
-      name: 'Julia Amâncio',
-      email: 'julia@gmail.com',
-      password: 'juliaCabeçaDeBigorna',
-      age: 15,
-    },
-  ];
+  private clients: Client[] = [];
 
-  getClients(): Client[] {
-    return this.clients;
+  getAllClients(): Observable<Client[]> {
+    const clients = this.httpClient.get<Client[]>(
+      'http://localhost:3000/clients'
+    );
+
+    return clients;
   }
 
-  getClientById(clientId: string): Client {
-    const client = this.clients.find((client) => {
-      return client.id === clientId;
+  getClientById(clientId: string): Observable<Client> {
+    debugger;
+    const client = this.httpClient.get<Client>(
+      `http://localhost:3000/clients/${clientId}`
+    );
+
+    return client;
+  }
+
+  createId(): string {
+    this.httpClient.get<Client[]>('http://localhost:3000/clients').subscribe((clients) => {
+      this.clients = clients;
     });
 
-    return client as Client;
+    const id = Number(this.clients[this.clients.length -1].id) + 1;
+
+    return id.toString();
+  }
+
+  createClient(client: Client): Observable<Object> {
+    debugger;
+    return this.httpClient.post('http://localhost:3000/clients', client);
   }
 
   sayHello(name: string): string {

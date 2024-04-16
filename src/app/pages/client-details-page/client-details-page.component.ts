@@ -14,20 +14,15 @@ export class ClientDetailsPageComponent implements OnInit {
     private activedRouter: ActivatedRoute
   ) {}
 
-  client: Client = {
-    id: '',
-    name: '',
-    email: '',
-    password: '',
-    age: 0,
-  };
+  client!: Client
 
   ngOnInit(): void {
+    debugger;
     const clientId = this.activedRouter.snapshot.paramMap.get('id');
     if (clientId) {
-      const getClient = this.clientService.getClientById(clientId);
-
-      this.client = getClient;
+      this.clientService.getClientById(clientId).subscribe((client) => {
+        this.client = client;
+      });
     }
   }
 }

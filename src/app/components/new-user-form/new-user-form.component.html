@@ -1,7 +1,23 @@
 <form [formGroup]="userForm" (ngSubmit)="addClient()">
   <div class="form-control">
-    <label for="name"> Digite o nome do cliente:</label>
+    <label for="name">Nome</label>
     <input id="name" type="text" formControlName="name">
   </div>
+
+  <div class="form-control">
+    <label for="email">Email</label>
+    <input id="email" type="text" formControlName="email">
+  </div>
+
+  <div class="form-control">
+    <label for="password">Senha</label>
+    <input id="password" type="text" formControlName="password">
+  </div>
+
+  <div class="form-control">
+    <label for="age">Idade</label>
+    <input id="age" type="text" formControlName="age">
+  </div>
+
   <button type="submit">Adicionar Cliente</button>
 </form>
