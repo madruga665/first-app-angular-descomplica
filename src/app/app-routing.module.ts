@@ -6,12 +6,13 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { UserGuard } from './guards/user.guard';
 import { ClientDetailsPageComponent } from './pages/client-details-page/client-details-page.component';
+import { AdminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
   { path: '', component: HomePage },
   { path: 'login', component: LoginPageComponent },
-  { path: 'dashboard', component: DashboardPageComponent },
-  { path: 'clients', component: ClientListPage, canActivate: [UserGuard] },
+  { path: 'dashboard', component: DashboardPageComponent, canActivate: [UserGuard] },
+  { path: 'clients', component: ClientListPage, canActivate: [UserGuard, AdminGuard] },
   { path: 'clients/details/:id', component: ClientDetailsPageComponent, canActivate: [UserGuard] },
 ];
 

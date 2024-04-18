@@ -15,7 +15,7 @@ Primeira parcial:
 - [x] 4. Rotas e Segurança dos componentes
 - [x] 5. RxJS dados Assíncronos
 - [x] 6. Manipular dados utilizando JSON
-- [ ] 7. Angular Material e Formulários
+- [X] 7. Angular Material e Formulários
 - [ ] 8. Formulários
 
 ## Como rodar o projeto

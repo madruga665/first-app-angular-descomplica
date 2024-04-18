@@ -6,7 +6,7 @@ header {
   justify-content: space-between;
   height: 88px;
   padding: 0 15px;
-  background-color: var(--vivid-pink);
+  background-color: #3f51b5;
 
   .logo-title-container {
     display: flex;
@@ -25,20 +25,4 @@ nav {
   display: flex;
   align-items: center;
   gap: 15px;
-}
-
-a {
-  text-decoration: none;
-}
-
-.logout-button, a {
-  color: var(--gray-900);
-  background-color: white;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 100%;
-  border: 1px solid var(--gray-900);
-  padding: 0.625rem 1.25rem;
-  border-radius: 0.625rem;
-  cursor: pointer;
 }

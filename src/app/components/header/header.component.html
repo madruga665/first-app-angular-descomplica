@@ -3,9 +3,9 @@
     <img [src]="angularLogo" width="54">
     <h2>{{headerTitle}}</h2>
   </div>
-  <nav>
-    <a [routerLink]="['/']">Home</a>
-    <a [routerLink]="['/clients']">Clientes</a>
-    <button *ngIf="verifyClientIsLogged()" class="logout-button" (click)="logout()">Logout</button>
+  <nav *ngIf="verifyClientIsLogged()">
+    <a mat-raised-button color="accent" [routerLink]="['/dashboard']">Dashboard</a>
+    <a mat-raised-button color="accent" [routerLink]="['/clients']">Clientes</a>
+    <button mat-raised-button color="primary" (click)="logout()">Logout</button>
   </nav>
 </header>

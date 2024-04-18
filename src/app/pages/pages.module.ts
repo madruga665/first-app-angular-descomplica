@@ -8,6 +8,8 @@ import { ClientDetailsPageComponent } from './client-details-page/client-details
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
     FormsModule,
     ComponentsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatCardModule,
   ],
   exports: [
     HomePage,
@@ -30,6 +34,6 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
     DashboardPageComponent,
     ClientListPage,
     ClientDetailsPageComponent,
-  ]
+  ],
 })
-export class PagesModule { }
+export class PagesModule {}

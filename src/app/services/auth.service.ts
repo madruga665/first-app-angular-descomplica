@@ -6,10 +6,10 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  constructor(private router: Router, private clientService: ClientService) {}
-
-  private clientInMemoryDatabase = this.clientService.getAllClients();
+  private client!: Client;
   private showLoginError: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
+  constructor(private router: Router, private clientService: ClientService) {}
 
   getShowLoginError() {
     return this.showLoginError;
@@ -39,7 +39,11 @@ export class AuthService {
         return client.email === email;
       });
 
-      const loginSuccess = this.validateClientInfo(client, password);
+      if (client) {
+        this.client = client;
+      }
+
+      const loginSuccess = this.validateClientInfo(this.client, password);
 
       if (loginSuccess) {
         localStorage.setItem('isLogged', 'true');
@@ -62,5 +66,9 @@ export class AuthService {
   logout() {
     localStorage.removeItem('isLogged');
     this.router.navigate(['/']);
+  }
+
+  getClient() {
+    return this.client;
   }
 }
