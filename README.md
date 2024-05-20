@@ -16,7 +16,9 @@ Primeira parcial:
 - [x] 5. RxJS dados Assíncronos
 - [x] 6. Manipular dados utilizando JSON
 - [X] 7. Angular Material e Formulários
-- [ ] 8. Formulários
+- [X] 8. Formulários
+- [X] 9. Validação avançada de dados
+- [X] 10. Comunicação entre componentes
 
 ## Como rodar o projeto
 
