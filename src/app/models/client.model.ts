@@ -4,5 +4,6 @@ export type Client = {
   email: string;
   password: string;
   age: number;
-  role: 'admin' | 'client'
+  role: 'admin' | 'client';
+  cpf: string;
 };

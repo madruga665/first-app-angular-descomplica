@@ -17,7 +17,6 @@ export class ClientDetailsPageComponent implements OnInit {
   client!: Client
 
   ngOnInit(): void {
-    debugger;
     const clientId = this.activedRouter.snapshot.paramMap.get('id');
     if (clientId) {
       this.clientService.getClientById(clientId).subscribe((client) => {

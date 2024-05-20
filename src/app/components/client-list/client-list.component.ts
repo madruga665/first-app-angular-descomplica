@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Client } from 'src/app/models/client.model';
 
 @Component({

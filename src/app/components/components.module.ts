@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ProductTableComponent } from './product-table/product-table.component';
 import { MatTableModule } from '@angular/material/table';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     MatToolbarModule,
     MatTableModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
   exports: [
     HeaderComponent,
@@ -32,5 +35,6 @@ import { MatTableModule } from '@angular/material/table';
     NewUserFormComponent,
     ProductTableComponent,
   ],
+  providers: [provideNgxMask()],
 })
 export class ComponentsModule {}

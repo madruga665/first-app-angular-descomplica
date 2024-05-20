@@ -19,7 +19,6 @@ export class ClientService {
   }
 
   getClientById(clientId: string): Observable<Client> {
-    debugger;
     const client = this.httpClient.get<Client>(
       `http://localhost:3000/clients/${clientId}`
     );
@@ -38,7 +37,6 @@ export class ClientService {
   }
 
   createClient(client: Client): Observable<Object> {
-    debugger;
     return this.httpClient.post('http://localhost:3000/clients', client);
   }
 
