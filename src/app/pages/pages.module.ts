@@ -10,6 +10,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { DatePickerPageComponent } from './date-picker-page/date-picker-page.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
     DashboardPageComponent,
     ClientListPage,
     ClientDetailsPageComponent,
+    DatePickerPageComponent,
   ],
   imports: [
     CommonModule,

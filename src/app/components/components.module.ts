@@ -10,6 +10,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ProductTableComponent } from './product-table/product-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { DatePickerComponent } from './date-picker/date-picker.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     ClientListComponent,
     NewUserFormComponent,
     ProductTableComponent,
+    DatePickerComponent,
   ],
   imports: [
     CommonModule,
@@ -28,12 +34,17 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     MatTableModule,
     NgxMaskDirective,
     NgxMaskPipe,
+    MatDatepickerModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatNativeDateModule
   ],
   exports: [
     HeaderComponent,
     ClientListComponent,
     NewUserFormComponent,
     ProductTableComponent,
+    DatePickerComponent
   ],
   providers: [provideNgxMask()],
 })

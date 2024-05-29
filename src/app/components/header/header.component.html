@@ -6,6 +6,7 @@
   <nav *ngIf="verifyClientIsLogged()">
     <a mat-raised-button color="accent" [routerLink]="['/dashboard']">Dashboard</a>
     <a mat-raised-button color="accent" [routerLink]="['/clients']">Clientes</a>
+    <a mat-raised-button color="accent" [routerLink]="['/date-picker']">Date Picker</a>
     <button mat-raised-button color="primary" (click)="logout()">Logout</button>
   </nav>
 </header>
